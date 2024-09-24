@@ -3,11 +3,13 @@ const IngredientList = (props) => {
     console.log(props.ingredients)
     return(
         <>
-            <div>
+            <ul className="ingredient-list">
             {props.ingredients.map((ingredient, index) => (
-                <p key={index}>{ingredient.name}</p>
+                <>
+                <li style={{backgroundColor: ingredient.color}} key={index}>{ingredient.name}</li><button>+</button>
+                </>
             ))}
-            </div>
+            </ul>
         </>
     );
 };
