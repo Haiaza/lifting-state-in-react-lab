@@ -22,15 +22,16 @@ export const availableIngredients = [
   { name: 'Swiss Cheese', color: '#F1E1A8' },
 ];
 
-const [stack, setStack] = useState()
+
 
 const App = () => {
+  const [stack, setStack] = useState()
   return (
     <main>
       <h1>Burger Stacker</h1>
       <section>
       {/* List & Stack components */}
-      <IngredientList />
+      <IngredientList ingredients={availableIngredients}/>
       <BurgerStack />
       </section>
     </main>
