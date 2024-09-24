@@ -6,7 +6,9 @@ const IngredientList = (props) => {
             <ul className="ingredient-list">
             {props.ingredients.map((ingredient, index) => (
                 <>
-                <li style={{backgroundColor: ingredient.color}} key={index}>{ingredient.name}</li><button>+</button>
+                <li style={{backgroundColor: ingredient.color}} key={index}>{ingredient.name}
+                <button>+</button>
+                </li>
                 </>
             ))}
             </ul>
