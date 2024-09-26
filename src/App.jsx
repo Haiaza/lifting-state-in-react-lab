@@ -32,16 +32,18 @@
       console.log(stack)
     }
 
-    const removeFromBurger = (ingredient) => {
-      setStack((curStack) => 
-        curStack.filter((item) => item.name !== ingredient.name)
-      )
+    const removeFromBurger = (ingredient, idx) => {
+      setStack((curStack) => {
+        const newStack = [...curStack]
+        newStack.splice(idx, 1)
+        return newStack
+      })
     }
 
     return (
       <main>
         <h1>Burger Stacker</h1>
-        <section>,
+        <section>
         <IngredientList 
         ingredients={availableIngredients} 
         addToBurger={addToBurger} 

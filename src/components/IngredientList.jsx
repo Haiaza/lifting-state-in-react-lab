@@ -5,6 +5,7 @@ const IngredientList = (props) => {
     const handleAddition = (event, ingredient) => {
         event.preventDefault()
         props.addToBurger(ingredient)
+        console.log(ingredient)
     }
 
     return(

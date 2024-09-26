@@ -1,16 +1,17 @@
 // `src/components/BurgerStack.jsx`
 const BurgerStack = (props) => {
 
-    const handleRemoval = (event) => {
+    const handleRemoval = (event, ingredient, idx) => {
         event.preventDefault()
-        props.removeFromBurger(event.target)
+        props.removeFromBurger(ingredient, idx)
+        // console.log(ingredient)
     }
 
     return (
         <>
             <ul>
             {props.stack.map((ingredient, index) => (
-                <form onSubmit={handleRemoval} key={index}>
+                <form onSubmit={(e) => handleRemoval(e, ingredient, index)} key={index}>
                     <li style={{backgroundColor: ingredient.color}} >{ingredient.name}
                         <button type="submit">-</button>
                     </li>
