@@ -27,6 +27,9 @@ export const availableIngredients = [
 const App = () => {
   const [stack, setStack] = useState()
 
+  const addToBurger = (event) => {
+    setStack([...currentBurger], newItem)
+  }
 
 
   return (
@@ -34,7 +37,10 @@ const App = () => {
       <h1>Burger Stacker</h1>
       <section>
       {/* List & Stack components */}
-      <IngredientList ingredients={availableIngredients}/>
+      <IngredientList 
+      ingredients={availableIngredients} 
+      addToBurger={addToBurger} 
+      />
       <BurgerStack />
       </section>
     </main>
