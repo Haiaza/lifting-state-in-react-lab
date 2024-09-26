@@ -2,16 +2,16 @@
 const IngredientList = (props) => {
     console.log(props.ingredients)
 
-    const handleAddition = (event) => {
+    const handleAddition = (event, ingredient) => {
         event.preventDefault()
-        props.addToBurger(event.target)
+        props.addToBurger(ingredient)
     }
 
     return(
         <>
             <ul className="ingredient-list">
             {props.ingredients.map((ingredient, index) => (
-                <form onSubmit={handleAddition} key={index}>
+                <form onSubmit={(e) => handleAddition(e, ingredient)} key={index}>
                     <li style={{backgroundColor: ingredient.color}} >{ingredient.name}
                         <button type="submit">+</button>
                     </li>
