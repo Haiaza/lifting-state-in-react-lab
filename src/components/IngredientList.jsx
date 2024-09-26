@@ -13,7 +13,7 @@ const IngredientList = (props) => {
             {props.ingredients.map((ingredient, index) => (
                 <form onSubmit={handleAddition} key={index}>
                     <li style={{backgroundColor: ingredient.color}} >{ingredient.name}
-                    <button type="submit">+</button>
+                        <button type="submit">+</button>
                     </li>
                 </form>
             ))}
